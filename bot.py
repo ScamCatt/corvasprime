@@ -2,7 +2,7 @@ import discord
 import responses
 
 URL = "https://discord.com/api/oauth2/authorize?client_id=1150433259788968016&permissions=414464698368&scope=bot"
-TOKEN = "MTE1MDQzMzI1OTc4ODk2ODAxNg.GvPLQO.Uh6xLM8edXnRGDZ3PnKW7T0i7wrhE_TEbn9rkc"
+TOKEN = ""
 
 async def sendMessage(message, userMessage):
     print("what I said" + userMessage)
