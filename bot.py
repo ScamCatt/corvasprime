@@ -5,7 +5,6 @@ URL = "https://discord.com/api/oauth2/authorize?client_id=1150433259788968016&pe
 TOKEN = ""
 
 async def sendMessage(message, userMessage, serverID):
-    print("what I said" + userMessage)
     try:
         response = responses.handleResponse(userMessage, serverID)
         if (response != None):
@@ -18,7 +17,7 @@ def runBot():
 
     @client.event
     async def on_ready():
-        print(f'{client.user} is detecting idiots!')
+        print(f'{client.user} is running!')
     
     @client.event
     async def on_message(message):

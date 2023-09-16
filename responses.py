@@ -20,6 +20,7 @@ def handleResponse(message, serverID) -> str:
 
     # Check if the message contains the right keywords.
     if (all([x in msg for x in keyWords])):
+        print("Corvas Prime mentioned!")
         if (curTime - lastTime >= timeoutAmount):
             servers[curServer] = curTime
             return "https://www.youtube.com/watch?v=VvGG9xdmAwE"
