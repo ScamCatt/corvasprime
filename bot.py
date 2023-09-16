@@ -4,11 +4,10 @@ import responses
 URL = "https://discord.com/api/oauth2/authorize?client_id=1150433259788968016&permissions=414464698368&scope=bot"
 TOKEN = ""
 
-async def sendMessage(message, userMessage):
+async def sendMessage(message, userMessage, serverID):
     print("what I said" + userMessage)
-    print(message)
     try:
-        response = responses.handleResponse(userMessage)
+        response = responses.handleResponse(userMessage, serverID)
         if (response != None):
             await message.channel.send(response)
     except Exception as e:
@@ -26,5 +25,6 @@ def runBot():
         if (message.author == client.user):
             return
         user_message = str(message.content)
-        await sendMessage(message, user_message)
+        serverID = message.guild.id
+        await sendMessage(message, user_message, serverID)
     client.run(TOKEN)
