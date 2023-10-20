@@ -1,8 +1,12 @@
 import discord
 import responses
+import json
+
+with open("database.json") as file:
+    creds = json.load(file)
 
 URL = "https://discord.com/api/oauth2/authorize?client_id=1150433259788968016&permissions=414464698368&scope=bot"
-TOKEN = ""
+TOKEN = creds["botkey"]
 
 async def sendMessage(message, userMessage, serverID, user):
     try:
